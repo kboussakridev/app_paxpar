@@ -26,18 +26,18 @@ async function onSubmit (event: FormSubmitEvent<Schema>) {
     <Header/>
     <div class="container">
         <UForm :schema="schema" :state="state" class="space-y-4" @submit="onSubmit">
-    <UFormGroup label="Email" name="email">
-      <UInput v-model="state.email" />
-    </UFormGroup>
+          <UFormGroup label="Email" name="email">
+            <UInput v-model="state.email" />
+          </UFormGroup>
 
-    <UFormGroup label="Password" name="password">
-      <UInput v-model="state.password" type="password" />
-    </UFormGroup>
+          <UFormGroup label="Password" name="password">
+            <UInput v-model="state.password" type="password" />
+          </UFormGroup>
 
-    <UButton type="submit">
-      Submit
-    </UButton>
-  </UForm>
+          <UButton type="submit">
+            Submit
+          </UButton>
+        </UForm>
     </div>
     <Footer/>
 </template>

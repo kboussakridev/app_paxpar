@@ -10,5 +10,10 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["@nuxt/ui"]
+  modules: ["@nuxt/ui", "@nuxtjs/supabase"],
+  supabase: {
+    url: process.env.SUPABASE_URL,
+    key: process.env.SUPABASE_KEY,
+    redirect: false
+    }
 })
