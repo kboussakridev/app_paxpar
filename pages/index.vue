@@ -1,6 +1,13 @@
 <template>
     
     <Header />
+    <div class="container">
+      <NuxtLink to="/register">Register</NuxtLink>
+      <br>
+      <NuxtLink to="/login">Login</NuxtLink>
+      <br>
+      <NuxtLink to="/logout">Logout</NuxtLink>
+    </div>
     <nav>
       <Nav_menu/>
     </nav>
