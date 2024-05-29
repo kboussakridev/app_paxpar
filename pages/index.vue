@@ -1,15 +1,15 @@
 <template>
     
     <Header />
-    <div class="container">
+    
+    <nav>
+      <div class="container">
       <NuxtLink to="/register">Register</NuxtLink>
       <br>
       <NuxtLink to="/login">Login</NuxtLink>
       <br>
       <NuxtLink to="/logout">Logout</NuxtLink>
     </div>
-    <nav>
-      <Nav_menu/>
     </nav>
       <main class="flex-grow">
         <div class="text-center">
@@ -19,7 +19,7 @@
             </div>
           </div>
         </div>
-          <div class="carousel w-full">
+          <div class="carousel w-auto h-max">
             <div id="item1" class="carousel-item w-full">
               <img src="~/assets/img/incoming_files.png" class="w-full" />
             </div> 
@@ -48,5 +48,12 @@
       </main>
     <Footer/>  
   </template>
-  
+
+
+
+<script setup>
+
+</script>
+
+
   

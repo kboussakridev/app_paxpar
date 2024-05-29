@@ -10,8 +10,12 @@ export default defineNuxtConfig({
     },
   },
 
+  
+
   modules: ["@nuxt/ui", 
-            "@nuxtjs/supabase"
+            "@nuxtjs/supabase",
+            "@nuxt/image-edge",
+            "@nuxtjs/tailwindcss",
           ],
   supabase: {
     url: process.env.SUPABASE_URL,
