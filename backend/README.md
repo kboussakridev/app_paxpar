@@ -1,4 +1,4 @@
-# création d'un application Paxpar.light
+# création d'une application Paxpar.light
 ## Coté backend avec FastAPI et Poetry
 
 Ce projet est un exemple de configuration et d'utilisation de FastAPI avec Poetry sur Windows.
