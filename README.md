@@ -20,6 +20,12 @@ npm i @nuxt/image-edge
 npm install @supabase/supabase-js
 
 ```
+## Création des dossiers assets/css/main.css
+    - A ajouter dans le fichier main.css
+    - @tailwind base;
+    - @tailwind components;
+    - @tailwind utilities;
+    
 ### nuxt.config.ts
 
 ```bash
