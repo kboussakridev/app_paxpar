@@ -53,6 +53,7 @@
                   />
               </div>
               <div class="flex items-center justify-between">
+                <nuxt-link to="/page-vide">
                   <button 
                       class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
                       @click=""
@@ -60,6 +61,7 @@
                   >
                       Valider
                   </button>
+                </nuxt-link>
               </div>
               <div v-if="successMsg" class="mt-4">
                   <h1 class="text-green-500 font-bold">{{ successMsg }}</h1>
@@ -76,15 +78,18 @@
 
 <style scoped>
     .page-container {
-        background-image: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.7)), url('https://www.shutterstock.com/fr/image-vector/create-app-account-smartphone-log-join-2288717095');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        min-height: 100vh;
         display: flex;
-        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-image: url('~/assets/img/paxpar2_4k.png');
+        background-size: 100% 100%;
+        background-position: center;
     }
 </style>
+
+
+
 
 
 <!-- <script setup>
