@@ -87,7 +87,7 @@ poetry shell
 ## Lancer l'Application FastAPI
 Avec l'environnement virtuel activé, lancez votre application FastAPI en utilisant Uvicorn :
 ```powershell
-puvicorn app.main:app --reload
+uvicorn app.main:app --reload
 
 
 ```
