@@ -10,7 +10,18 @@ export default defineNuxtConfig({
     },
   },
 
-  
+  components: [
+    {
+      path: '~/components/ui',
+      extensions: ['.vue'],
+      prefix: '',
+    },
+    {
+      path: '~/components',
+      extensions: ['.vue'],
+      prefix: '',
+    },
+  ],
 
   modules: ["@nuxt/ui", 
             "@nuxtjs/supabase",

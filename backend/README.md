@@ -1,4 +1,4 @@
-# création d'un application Paxpar.light
+# création d'une application Paxpar.light
 ## Coté backend avec FastAPI et Poetry
 
 Ce projet est un exemple de configuration et d'utilisation de FastAPI avec Poetry sur Windows.
@@ -87,7 +87,7 @@ poetry shell
 ## Lancer l'Application FastAPI
 Avec l'environnement virtuel activé, lancez votre application FastAPI en utilisant Uvicorn :
 ```powershell
-puvicorn app.main:app --reload
+uvicorn app.main:app --reload
 
 
 ```
