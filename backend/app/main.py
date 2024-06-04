@@ -9,7 +9,6 @@ app = FastAPI()
 
 
 origins = [
-    "http://localhost:8000",
     "http://localhost:3000",
 ]
 
@@ -46,3 +45,11 @@ def update_item(item_id: int, item: Item):
 def backend_function():
     # Code de votre fonction backend
     return {"message": "Fonction backend exécutée avec succès"}
+
+@app.get("/api/data")
+def get_data():
+    return {"message": "Hello from FastAPI"}
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
