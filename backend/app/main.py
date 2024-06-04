@@ -43,7 +43,6 @@ def update_item(item_id: int, item: Item):
 
 @app.get("/backend_function")
 def backend_function():
-    # Code de votre fonction backend
     return {"message": "Fonction backend exécutée avec succès"}
 
 @app.get("/api/data")
