@@ -24,4 +24,4 @@ logs
 !.env.example
 
 bun.lockb
-#/backend/file.pdf
+backend/file.pdf

@@ -7,15 +7,15 @@ from pypdf import PdfReader, PdfWriter
 from pypdf.annotations import FreeText
 import time
 from starlette.responses import FileResponse
-
-
 import tkinter as tk
+
 app = FastAPI()
 
 
 origins = [
     "http://localhost:3000",
 ]
+
 
 app.add_middleware(
     CORSMiddleware,
@@ -24,6 +24,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 
 class Item(BaseModel):
@@ -52,7 +53,27 @@ def backend_function():
 
 @app.get("/api/data")
 def get_data():
-    return {"message": "Hello from FastAPI"}
+    return {
+        "message": f"Hello from FastAPI {time.time()}",
+    }
+
+
+@app.get("/api/chat")
+def get_chat():
+    return {
+        "conversation": [
+            "It's over Anakin, <br />I have the high ground.",
+            "You underestimate my power!",
+            "It's over Anakin, <br />I have the high ground.",
+            "You underestimate my power!",
+            "It's over Anakin, <br />I have the high ground.",
+            "You underestimate my power!",
+            "It's over Anakin, <br />I have the high ground.",
+            "You underestimate my power!",
+            "It's over Anakin, <br />I have the high ground.",
+            "You underestimate my power!",
+        ]
+    }
 
 
 @app.get("/invoice/{num}")
