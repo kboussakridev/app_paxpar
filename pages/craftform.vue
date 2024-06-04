@@ -1,5 +1,221 @@
 <template>
   <Header/>
+  <div>
+    <div class="flex flex-wrap m-8"> 
+    <div class="card w-96 bg-base-100 shadow-xl m-8">
+        <figure><img src="~/assets/img/children.png" alt="Shoes" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Attestation</h2>
+            <p>Créer et vérifier automatiquement les attestation professionnelles pour vos collaborateurs</p>
+            <div class="card-actions justify-end">
+            <button class="btn btn-primary">Créer</button>
+            </div>
+        </div>
+    </div> 
+    <div class="card w-96 bg-base-100 shadow-xl m-8">
+        <figure><img src="~/assets/img/children.png" alt="Shoes" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Base Doc Builder</h2>
+            <p>Création de document enrichi basique</p>
+            <div class="card-actions justify-end">
+            <button class="btn btn-primary">Créer</button>
+            </div>
+        </div>
+    </div> 
+    <div class="card w-96 bg-base-100 shadow-xl m-8">
+        <figure><img src="~/assets/img/children.png" alt="Shoes" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Carnet d'attestation</h2>
+            <p>Créer, signer et vérifier automatiquement votre carnet d'habilitations.</p>
+            <div class="card-actions justify-end">
+            <button class="btn btn-primary">Créer</button>
+            </div>
+        </div>
+    </div> 
+    <div class="card w-96 bg-base-100 shadow-xl m-8">
+        <figure><img src="~/assets/img/children.png" alt="Shoes" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Carnet d'attestation FROZEN</h2>
+            <p>Créer, signer et vérifier automatiquement votre carnet d'habilitations.</p>
+            <div class="card-actions justify-end">
+            <button class="btn btn-primary">Créer</button>
+            </div>
+        </div>
+    </div> 
+    <div class="card w-96 bg-base-100 shadow-xl m-8">
+        <figure><img src="~/assets/img/children.png" alt="Shoes" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Dossier RFI</h2>
+            <p>Création du Dossier RFI - Secteur nucléaire</p>
+            <div class="card-actions justify-end">
+            <button class="btn btn-primary">Créer</button>
+            </div>
+        </div>
+    </div> 
+    <div class="card w-96 bg-base-100 shadow-xl m-8">
+        <figure><img src="~/assets/img/children.png" alt="Shoes" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Dossier de douane</h2>
+            <p>Faciliter l'export de vos marchandises avec votre client en déposant directement vos justificatifs,</p>
+            <div class="card-actions justify-end">
+            <button class="btn btn-primary">Créer</button>
+            </div>
+        </div>
+    </div> 
+    <div class="card w-96 bg-base-100 shadow-xl m-8">
+        <figure><img src="~/assets/img/children.png" alt="Shoes" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Garantie Décenale</h2>
+            <p>Création d'une attestation de garantie décenale</p>
+            <div class="card-actions justify-end">
+            <button class="btn btn-primary">Créer</button>
+            </div>
+        </div>
+    </div> 
+    <div class="card w-96 bg-base-100 shadow-xl m-8">
+        <figure><img src="~/assets/img/children.png" alt="Shoes" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">My-Compagny-Consolidation</h2>
+            <p>Consolidation de l'émargement</p>
+            <div class="card-actions justify-end">
+            <button class="btn btn-primary">Créer</button>
+            </div>
+        </div>
+    </div> 
+    <div class="card w-96 bg-base-100 shadow-xl m-8">
+        <figure><img src="~/assets/img/children.png" alt="Shoes" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">My-Compagny-Emargement</h2>
+            <p>Création d'une fiche d'émargement</p>
+            <div class="card-actions justify-end">
+            <button class="btn btn-primary">Créer</button>
+            </div>
+        </div>
+    </div> 
+    <div class="card w-96 bg-base-100 shadow-xl m-8">
+        <figure><img src="~/assets/img/children.png" alt="Shoes" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Ordres c'intervention</h2>
+            <p>Créer et vérifier automatiquement vos intervention.</p>
+            <div class="card-actions justify-end">
+            <button class="btn btn-primary">Créer</button>
+            </div>
+        </div>
+    </div> 
+    <div class="card w-96 bg-base-100 shadow-xl m-8">
+        <figure><img src="~/assets/img/children.png" alt="Shoes" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">PAF Facture</h2>
+            <p>Enrichire une facture pour construire une piste d'audit fiable</p>
+            <div class="card-actions justify-end">
+            <button class="btn btn-primary">Créer</button>
+            </div>
+        </div>
+    </div> 
+    <div class="card w-96 bg-base-100 shadow-xl m-8">
+        <figure><img src="~/assets/img/children.png" alt="Shoes" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">PAF Facture NOVO</h2>
+            <p>Enrichire une facture pour construire une piste d'audit fiable</p>
+            <div class="card-actions justify-end">
+            <button class="btn btn-primary">Créer</button>
+            </div>
+        </div>
+    </div> 
+    <div class="card w-96 bg-base-100 shadow-xl m-8">
+        <figure><img src="~/assets/img/children.png" alt="Shoes" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">PAF Facture tuto</h2>
+            <p>Enrichire une facture pour construire une piste d'audit fiable</p>
+            <div class="card-actions justify-end">
+            <button class="btn btn-primary">Créer</button>
+            </div>
+        </div>
+    </div> 
+    <div class="card w-96 bg-base-100 shadow-xl m-8">
+        <figure><img src="~/assets/img/children.png" alt="Shoes" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">RFI - disabled</h2>
+            <p>Documents de suivi d'intervention</p>
+            <div class="card-actions justify-end">
+            <button class="btn btn-primary">Créer</button>
+            </div>
+        </div>
+    </div> 
+    <div class="card w-96 bg-base-100 shadow-xl m-8">
+        <figure><img src="~/assets/img/children.png" alt="Shoes" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">RFI - Dossier Assurance Qualité</h2>
+            <p>Création du Dossier Assurance Qualité</p>
+            <div class="card-actions justify-end">
+            <button class="btn btn-primary">Créer</button>
+            </div>
+        </div>
+    </div> 
+    <div class="card w-96 bg-base-100 shadow-xl m-8">
+        <figure><img src="~/assets/img/children.png" alt="Shoes" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">RFI - LDA</h2>
+            <p>Liste des Documents Applicables</p>
+            <div class="card-actions justify-end">
+            <button class="btn btn-primary">Créer</button>
+            </div>
+        </div>
+    </div> 
+    <div class="card w-96 bg-base-100 shadow-xl m-8">
+        <figure><img src="~/assets/img/children.png" alt="Shoes" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">RFI - Organogramme</h2>
+            <p>Création de l'organigramme</p>
+            <div class="card-actions justify-end">
+            <button class="btn btn-primary">Créer</button>
+            </div>
+        </div>
+    </div> 
+    <div class="card w-96 bg-base-100 shadow-xl m-8">
+        <figure><img src="~/assets/img/children.png" alt="Shoes" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">RFI - Sous-traitants</h2>
+            <p>Création du document contenant les organigrammes des différents suos-traitants</p>
+            <div class="card-actions justify-end">
+            <button class="btn btn-primary">Créer</button>
+            </div>
+        </div>
+    </div> 
+    <div class="card w-96 bg-base-100 shadow-xl m-8">
+        <figure><img src="~/assets/img/children.png" alt="Shoes" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">RIB - Relevé d'identité bancaire</h2>
+            <p>Création d'un RIB enrichi</p>
+            <div class="card-actions justify-end">
+            <button class="btn btn-primary">Créer</button>
+            </div>
+        </div>
+    </div> 
+    <div class="card w-96 bg-base-100 shadow-xl m-8">
+        <figure><img src="~/assets/img/children.png" alt="Shoes" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Remise des justificatifs</h2>
+            <p>Faciliter l'échange avec votre cabinet comptable en déposant directement vos justificatifs</p>
+            <div class="card-actions justify-end">
+            <button class="btn btn-primary">Créer</button>
+            </div>
+        </div>
+    </div> 
+    <div class="card w-96 bg-base-100 shadow-xl m-8">
+        <figure><img src="~/assets/img/children.png" alt="Shoes" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Spreadsheet tuto</h2>
+            <p>Drop en Excel Sreadsheet file and process it</p>
+            <div class="card-actions justify-end">
+            <button class="btn btn-primary">Créer</button>
+            </div>
+        </div>
+    </div> 
+  </div>
+  
+    
+  </div>
   <div class="container">
     <div class="steps ">
       <span class="circle active">1</span>
