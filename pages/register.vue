@@ -2,8 +2,9 @@
   <Header/>
   <div class="page-container">
       <div class="container mx-auto p-6 max-w-md">
+        <form @submit.prevent="signUp">
           <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-              <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">S'enregistrer</h1>
+              <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">Register</h1>
               <div class="mb-4">
                   <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
                       Email
@@ -28,7 +29,7 @@
                       placeholder="******************"
                   />
               </div>
-              <div class="mb-4">
+              <!-- <div class="mb-4">
                   <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
                       Nom
                   </label>
@@ -51,12 +52,12 @@
                       v-model="address" 
                       placeholder="Address"
                   />
-              </div>
+              </div> -->
               <div class="flex items-center justify-between">
-                <nuxt-link to="/page-vide">
+                <nuxt-link to="/home">
                   <button 
                       class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
-                      @click=""
+                      @click="sinUp"
                       type="button"
                   >
                       Valider
@@ -70,6 +71,7 @@
                   <h1 class="text-red-500 font-bold">{{ errorMsg }}</h1>
               </div>
           </div>
+        </form>
       </div>
   </div>
   <Footer/>
@@ -87,6 +89,28 @@
         background-position: center;
     }
 </style>
+
+<script setup>
+
+const client = useSupabaseClient();
+const email = ref("");
+const password = ref(null);
+const errorMsg = ref(null);
+const successMsg = ref(null);
+
+async function signUp() {
+    try {
+        const { data, error } = await client.auth.signUp({
+            email: email.value,
+            password: password.value,
+        });
+        if (error) throw error;
+        successMsg.value = "Check your email to comfirm account."
+    } catch (error) {
+        errorMsg.value = error.message;
+    }
+}
+</script>
 
 
 

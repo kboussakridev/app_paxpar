@@ -1,6 +1,6 @@
 from typing import Union
 
-from fastapi import FastAPI
+from fastapi import FastAPI, File, UploadFile, HTTPException
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 from pypdf import PdfReader, PdfWriter
@@ -8,7 +8,8 @@ from pypdf.annotations import FreeText
 import time
 from starlette.responses import FileResponse
 import tkinter as tk
-
+from fastapi.responses import JSONResponse
+import os
 app = FastAPI()
 
 
@@ -117,6 +118,31 @@ def invoice_get(num: int):
         # media_type="application/octet-stream",
         # filename=file_name,
     )
+
+# Définit le répertoire d'upload
+UPLOAD_DIRECTORY = "uploads"
+
+# Vérifie si le répertoire d'upload existe, sinon le crée
+if not os.path.exists(UPLOAD_DIRECTORY):
+    os.makedirs(UPLOAD_DIRECTORY)
+
+# Définit une route POST pour télécharger des fichiers
+@app.post("/upload")
+async def upload_file(files: list[UploadFile] = File(...)):
+    try:
+        # Parcourt la liste des fichiers téléchargés
+        for file in files:
+            # Détermine l'emplacement où enregistrer chaque fichier
+            file_location = os.path.join(UPLOAD_DIRECTORY, file.filename)
+            # Ouvre chaque fichier et écrit son contenu dans le répertoire d'upload
+            with open(file_location, "wb+") as file_object:
+                file_object.write(file.file.read())
+        # Retourne une réponse JSON indiquant que les fichiers ont été téléchargés avec succès
+        return JSONResponse(content={"message": "Fichiers téléchargés avec succès"}, status_code=200)
+    except Exception as e:
+        # En cas d'erreur lors du téléchargement des fichiers, retourne une réponse JSON avec l'erreur
+        return JSONResponse(content={"error": str(e)}, status_code=400)
+
 
 
 if __name__ == "__main__":
