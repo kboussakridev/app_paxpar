@@ -1,16 +1,6 @@
 <template>
     
     <Header />
-    
-    <nav>
-      <div class="container">
-      <NuxtLink to="/register">Register</NuxtLink>
-      <br>
-      <NuxtLink to="/login">Login</NuxtLink>
-      <br>
-      <NuxtLink to="/logout">Logout</NuxtLink>
-    </div>
-    </nav>
       <main class="flex-grow">
         <div class="text-center">
           <div class="py-24 sm:py-32 md:py-40 relative">

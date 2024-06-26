@@ -1,4 +1,7 @@
 <script setup lang="ts">
+definePageMeta({
+  middleware: ["auth"]
+})
 
 async function getMyInvoice() {
     // appel API

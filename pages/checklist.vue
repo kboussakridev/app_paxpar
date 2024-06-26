@@ -2,12 +2,16 @@
 <template>
   <div>
     <!-- Composant Dropzone qui accepte les fichiers déposés -->
+    <!-- <Dropzone @files-dropped="handleFilesDropped" /> -->
     <Dropzone @files-dropped="handleFilesDropped" />
+    
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+definePageMeta({
+  middleware: ["auth"]
+})
 
 
 // Crée une référence réactive pour stocker les fichiers déposés
@@ -34,15 +38,25 @@ async function handleFilesDropped(droppedFiles) {
       body: formData
     })
 
-    // Récupère les données de la réponse
-    const data = await response.json()
+  //   // Récupère les données de la réponse
+  //   const data = await response.json()
 
-    // Affiche la réponse du serveur dans la console
-    console.log('Réponse du serveur:', data)
+  //   // Affiche la réponse du serveur dans la console
+  //   console.log('Réponse du serveur:', data)
+  // } catch (error) {
+  //   // Affiche une erreur si la requête échoue
+  //   console.error('Erreur lors du téléchargement des fichiers:', error)
+  // }
+     // Vérifie si la réponse est OK
+     if (response.ok) {
+      console.log('Fichiers envoyés avec succès !')
+    } else {
+      console.error('Erreur lors de l\'envoi des fichiers :', response.status)
+    }
   } catch (error) {
-    // Affiche une erreur si la requête échoue
-    console.error('Erreur lors du téléchargement des fichiers:', error)
-  }
+    console.error('Erreur lors de l\'envoi des fichiers :', error)
+  } 
+
 }
 </script>
 

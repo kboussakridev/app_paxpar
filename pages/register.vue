@@ -29,20 +29,20 @@
                       placeholder="******************"
                   />
               </div>
-              <!-- <div class="mb-4">
-                  <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
-                      Nom
+              <div class="mb-4">
+                  <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+                      User Name
                   </label>
                   <input 
                       class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
-                      id="username" 
+                      id="userName" 
                       type="text" 
-                      v-model="username" 
-                      placeholder="Votre nom"
+                      v-model="userName" 
+                      placeholder="userName"
                   />
               </div>
               <div class="mb-4">
-                  <label class="block text-gray-700 text-sm font-bold mb-2" for="address">
+                  <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
                       Address
                   </label>
                   <input 
@@ -50,14 +50,14 @@
                       id="address" 
                       type="text" 
                       v-model="address" 
-                      placeholder="Address"
+                      placeholder="address"
                   />
-              </div> -->
+              </div>
               <div class="flex items-center justify-between">
-                <nuxt-link to="/home">
+                <nuxt-link to="/">
                   <button 
                       class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
-                      @click="sinUp"
+                      @click="signUp"
                       type="button"
                   >
                       Valider
@@ -92,77 +92,44 @@
 
 <script setup>
 
-const client = useSupabaseClient();
-const email = ref("");
-const password = ref(null);
-const errorMsg = ref(null);
-const successMsg = ref(null);
 
-async function signUp() {
-    try {
-        const { data, error } = await client.auth.signUp({
-            email: email.value,
-            password: password.value,
-        });
-        if (error) throw error;
-        successMsg.value = "Check your email to comfirm account."
-    } catch (error) {
-        errorMsg.value = error.message;
+
+const client = useSupabaseClient()
+const user = useSupabaseUser()
+const email = ref(null)
+const password = ref(null)
+const userName = ref(null)
+const address = ref(null)
+const successMsg = ref(false)
+const errorMsg = ref(false)
+const router = useRouter()
+
+
+
+const signUp = async () => {
+  const { data, error } = await client.auth.signUp({
+    email: email.value,
+    password: password.value,
+    options: {
+      data: {
+        full_name: userName.value,
+        address: address.value
+      },
+      emailRedirectTo: 'http://localhost:3000' // Assurez-vous que cette URL est correcte
     }
+  })
+
+  if (error) {
+    successMsg.value = null
+    errorMsg.value = error.message
+    return
+  }
+  errorMsg.value = null
+  successMsg.value = 'Redirecting...'
+  setTimeout(async () => {
+    successMsg.value = null
+    await router.push('/confirm')
+  }, 2000)
 }
+ 
 </script>
-
-
-
-
-
-<!-- <script setup>
-import { useSupabaseClient, useSupabaseUser } from '@supabase/supabase-js' // Importation des hooks pour utiliser Supabase
-import { useState } from '#app' // Importation du hook useState pour gérer les états locaux
-
-// Initialisation des variables et des états
-const supabase = useSupabaseClient() // Initialisation du client Supabase
-const user = useSupabaseUser() // Récupération de l'utilisateur actuellement connecté via Supabase
-const email = useState(() => null) // État pour stocker l'email
-const password = useState(() => null) // État pour stocker le mot de passe
-const username = useState(() => null) // État pour stocker le nom d'utilisateur
-const address = useState(() => null) // État pour stocker l'adresse
-const successMsg = useState(() => false) // État pour afficher un message de succès
-const errorMsg = useState(() => false) // État pour afficher un message d'erreur
-
-// Redirection vers la page d'accueil si l'utilisateur est déjà connecté
-// if (user.value) await navigateTo('/')
-
-// Fonction pour se connecter avec OAuth via Supabase
-const signInWithOAuth = async () => {
-    // Tentative de connexion avec les informations fournies
-    const {data, error} = await supabase.auth.signInWithOAuth  ({
-        email: email.value, // Email de l'utilisateur
-        password: password.value, // Mot de passe de l'utilisateur
-        options: {
-            data: {
-                full_name: username.value, // Nom d'utilisateur
-                address: address.value // Adresse de l'utilisateur
-            },
-            emailRedirectTo: 'http://localhost:3000' // URL de redirection après connexion
-        }
-    })
-
-    // Gestion des erreurs de connexion
-    if (error) {
-        successMsg.value = null // Réinitialisation du message de succès
-        errorMsg.value = error.message // Affichage du message d'erreur
-        return
-    }
-
-    // Si la connexion est réussie
-    errorMsg.value = null // Réinitialisation du message d'erreur
-    successMsg.value = 'Redirecting...' // Affichage du message de succès
-
-    // Redirection après un délai de 2 secondes
-    setTimeout(async() => {
-        successMsg.value = null // Réinitialisation du message de succès
-        await navigateTo('/confirm') // Navigation vers la page de confirmation
-    }, 2000)
-}
-</script> -->

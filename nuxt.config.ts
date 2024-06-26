@@ -9,6 +9,7 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  
 
   components: [
     {
@@ -23,14 +24,21 @@ export default defineNuxtConfig({
     },
   ],
 
-  modules: ["@nuxt/ui", 
-            "@nuxtjs/supabase",
-            "@nuxt/image-edge",
-            "@nuxtjs/tailwindcss",
-            "@vee-validate/nuxt",
-          ],
+  modules: [
+    "@nuxt/ui",
+    "@nuxtjs/supabase",
+    '@vueuse/nuxt',
+    "@nuxtjs/tailwindcss",
+    "@vee-validate/nuxt",
+    "@nuxt/image"
+  ],
   veeValidate: {
     autoImports : true
+  },
+  vite: {
+    optimizeDeps: {
+      include: ['@supabase/gotrue-js']
+    }
   },
   supabase: {
     url: process.env.SUPABASE_URL,

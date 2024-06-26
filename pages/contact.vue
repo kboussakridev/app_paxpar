@@ -24,3 +24,8 @@
   </div>
     <Footer/>
 </template>
+<script setup>
+definePageMeta({
+  middleware: ["auth"]
+})
+</script>

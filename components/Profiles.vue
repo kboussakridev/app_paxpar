@@ -1,29 +1,29 @@
 <script setup lang="ts">
+const user = useSupabaseUser()
 const items = [
   [{
-    label: 'karim@example.com',
     slot: 'account',
     disabled: true
   }], [{
-    label: 'Settings',
-    icon: 'i-heroicons-cog-8-tooth',
-    href: '/settings'
+    label: 'checklist',
+    icon: 'i-heroicons-document-check-20-solid',
+    href: '/checklist'
   }], [{
-    label: 'Documentation',
-    icon: 'i-heroicons-book-open',
-    href: '/documentation'
+    label: 'craftform',
+    icon: 'i-heroicons-table-cells-solid',
+    href: '/craftform'
   }, {
-    label: 'Changelog',
-    icon: 'i-heroicons-megaphone',
-    href: '/changelog'
+    label: 'bio',
+    icon: 'i-heroicons-megaphone-16-solid',
+    href: '/bio'
   }, {
-    label: 'Status',
-    icon: 'i-heroicons-signal',
-    href: '/status'
+    label: 'contact',
+    icon: 'i-heroicons-chat-bubble-left-right-16-solid',
+    href: '/contact'
   }], [{
     label: 'Sign out',
-    icon: 'i-heroicons-arrow-left-on-rectangle',
-    href: '/login'
+    icon: 'i-heroicons-arrow-right-start-on-rectangle-16-solid',
+    href: '/profile'
   }, ]
 ]
 </script>
@@ -36,6 +36,7 @@ const items = [
       <div class="text-left">
         <p>
           Signed in as
+          {{ user.email }}
         </p>
         <p class="truncate font-medium text-gray-900 dark:text-white">
           {{ item.label }}

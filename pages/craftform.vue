@@ -235,6 +235,9 @@
 </template>
 
 <script setup>
+definePageMeta({
+  middleware: ["auth"]
+})
 import { onMounted } from 'vue'
 
 onMounted(() => {
